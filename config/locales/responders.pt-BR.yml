@@ -1,0 +1,12 @@
+pt-BR:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} foi criado(a) com sucesso."
+        alert: "%{resource_name} não foi criado(a) com sucesso."
+      update:
+        notice: "%{resource_name} foi atualizado(a) com sucesso."
+        alert: "%{resource_name} não foi atualizado(a) com sucesso."
+      destroy:
+        notice: "%{resource_name} foi excluído(a) com sucesso."
+        alert: "%{resource_name} não foi excluído(a) com sucesso."

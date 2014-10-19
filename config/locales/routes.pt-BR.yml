@@ -1,0 +1,4 @@
+pt-BR:
+  routes:
+    new: "criar"
+    edit: "editar"
