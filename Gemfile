@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0',       group: :doc
 gem 'spring',                 group: :development
 gem 'paper_trail'
 gem "puma",                   group: :development
+gem "devise"
 
 
 group :development, :test do
@@ -22,6 +23,7 @@ group :development, :test do
   gem "capybara", "~> 2.4.1"
   gem "capybara-webkit", "~> 1.3.0"
 
+  gem "seedbank"
   gem "faker"
   gem "forgery"
   gem "pry-rails"
