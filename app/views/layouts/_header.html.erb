@@ -1,0 +1,126 @@
+
+
+<div class="container">
+  <h1 class="logo">
+    <a href="index.html">
+      <!-- <img alt="Porto" width="111" height="54" data-sticky-width="82" data-sticky-height="40" src="img/logo.png"> -->
+      <%= image_tag("logo.png", width: "111", height: "54", alt: "Porto", data: { "sticky-width" => "82", "sticky-height" => "40" } ) %>
+    </a>
+  </h1>
+  <div class="search">
+    <form id="searchForm" action="page-search-results.html" method="get">
+      <div class="input-group">
+        <input type="text" class="form-control search" name="q" id="q" placeholder="Search...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit"><%= icon("search", "") %></button>
+        </span>
+      </div>
+    </form>
+  </div>
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+  <nav>
+    <ul class="nav nav-pills nav-top">
+      <li>
+        <a href="about-us.html"><%= icon("angle-right", "") %>About Us</a>
+      </li>
+      <li>
+        <a href="contact-us.html"><%= icon("angle-right", "") %>Contact Us</a>
+      </li>
+      <li class="phone">
+        <span><%= icon("phone", "") %>(123) 456-7890</span>
+      </li>
+    </ul>
+  </nav>
+  <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
+    <i class="icon icon-bars"></i>
+  </button>
+</div>
+<div class="navbar-collapse nav-main-collapse collapse">
+  <div class="container">
+    <div class="social-icons">
+      <ul class="social-icons">
+        <li class="facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook">Facebook</a></li>
+        <li class="twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter">Twitter</a></li>
+        <li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">Linkedin</a></li>
+      </ul>
+    </div>
+    <nav class="nav-main mega-menu">
+      <ul class="nav nav-pills nav-main" id="mainMenu">
+        <li class="dropdown active">
+          <a class="dropdown-toggle" href="#">
+            Home
+            <%= icon("angle-down", "") %>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-submenu">
+              <a href="#">Sliders</a>
+              <ul class="dropdown-menu">
+                <li><a href="index.html">Revolution Slider</a></li>
+                <li><a href="index-slider-2.html">Nivo Slider</a></li>
+              </ul>
+            </li>
+            <li><a href="index.html">Home - Default</a></li>
+            <li><a href="index-2.html">Home - Color</a></li>
+            <li><a href="index-3.html">Home - Light</a></li>
+            <li><a href="index-4.html">Home - Video</a></li>
+            <li><a href="index-5.html">Home - Video - Light</a></li>
+            <li><a href="index-one-page.html">One Page Website</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="rankings.html">Rankings</a>
+        </li>
+        <li>
+          <a href="records.html">Records</a>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#">
+            Competitions
+            <%= icon("angle-down", "") %>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="competitions.html">competitions</a></li>
+            <li><a href="competitions-timeline.html">competitions timeline</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="persons.html">Persons</a>
+        </li>
+        <li>
+          <a href="multimidia.html">Multimidia</a>
+        </li>
+        <li>
+          <a href="statistics.html">Statistics</a>
+        </li>
+        <li>
+          <a href="misc.html">MISC</a>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#">
+            Contact Us
+            <%= icon("angle-down", "") %>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="contact-us.html">Contact Us - Basic</a></li>
+            <li><a href="contact-us-advanced.php">Contact Us - Advanced</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

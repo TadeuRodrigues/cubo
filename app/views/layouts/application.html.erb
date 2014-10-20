@@ -1,31 +1,70 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>CuboRails</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!--[if IE 8]>      <html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>      <html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->  
+<html> <!--<![endif]-->
+  <head>
+  <%= render partial: "layouts/head" %>
+  </head>
+  <body>
 
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+    <div class="body">
+      <header>
+      <%= render partial: "layouts/header" %>
+      </header>
 
-<p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
+      <div role="main" class="main">
+        <div id="content" class="content full">
+        <%= yield %>
+        </div>
+      </div>
 
-<%= yield %>
+      <footer id="footer">
+      <%= render partial: "layouts/footer" %>
+      </footer>
+    </div>
 
-</body>
+    <!-- Libs -->
+    <script src="vendor/jquery.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="vendor/jquery.easing.js"></script>
+    <script src="vendor/jquery.appear.js"></script>
+    <script src="vendor/jquery.cookie.js"></script>
+    
+    <script src="vendor/bootstrap.js"></script>
+    <script src="vendor/twitterjs/twitter.js"></script>
+    <script src="vendor/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="vendor/owl-carousel/owl.carousel.js"></script>
+    <script src="vendor/circle-flip-slideshow/js/jquery.flipshow.js"></script>
+    <script src="vendor/magnific-popup/magnific-popup.js"></script>
+    <script src="vendor/mediaelement/mediaelement-and-player.js"></script>
+    <script src="vendor/jquery.validate.js"></script>
+
+    <!-- Current Page Scripts -->
+    <script src="js/views/view.home.js"></script>
+
+    <!-- Theme Initializer -->
+    <script src="js/theme.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/custom.js"></script>
+
+    <!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-12345678-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+     -->
+
+  </body>
 </html>
